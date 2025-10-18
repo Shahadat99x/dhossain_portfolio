@@ -1,0 +1,35 @@
+---
+title: Launching an AI Toolkit With Confidence
+description: A checklist for delivering production-ready AI features without over-engineering the stack.
+date: 2025-01-05
+tags:
+  - AI Strategy
+  - Product
+published: true
+---
+
+Shipping an AI-powered feature is about more than plugging an API key into a prototype. In client work I focus on three loops: discovery, experimentation, and delivery.
+
+## Discovery loops
+
+- Start with a sharp, measurable problem statement.
+- Map the data terrain early so surprises surface before sprint three.
+- Align success metrics with the teams who actually feel the outcome.
+
+## Experimentation loops
+
+Every experiment should earn its way into the roadmap. I score candidates with a lightweight rubric: impact, confidence, effort, and narrative value.
+
+```ts
+const experimentScore = (impact: number, confidence: number, effort: number) => {
+  return Math.round(((impact * confidence) / effort) * 100) / 100;
+};
+```
+
+## Delivery loops
+
+- Treat evaluation like production-version the prompts, track the metrics.
+- Instrument feedback so humans stay in the loop.
+- Automate "boring" guardrails: monitoring, retries, rollbacks.
+
+These rhythms keep teams shipping confidently even as the model landscape shifts.
