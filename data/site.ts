@@ -29,8 +29,11 @@ export const navigation: NavItem[] = [
 ];
 
 export const socialLinks: SocialLink[] = [
-  { platform: "GitHub", href: "https://github.com/your-github" },
-  { platform: "LinkedIn", href: "https://linkedin.com/in/your-profile" },
-  { platform: "X", href: "https://x.com/your-handle" },
-  { platform: "YouTube", href: "https://youtube.com/@your-channel" },
+  { platform: "GitHub", href: "https://github.com/Shahadat99x" },
+  { platform: "LinkedIn", href: "https://linkedin.com/in/shahadat-ai" },
+  { platform: "X", href: "https://x.com/shahadat_ai" },
+  { platform: "Instagram", href: "https://www.instagram.com/shahadathossainverified/" },
+  { platform: "Reddit", href: "https://reddit.com/user/shahadat_ai" },
+  { platform: "Facebook", href: "https://facebook.com/shahadathossainverified" },
+  { platform: "YouTube", href: "https://youtube.com/@TraveloguebyShahadat" },
 ];
