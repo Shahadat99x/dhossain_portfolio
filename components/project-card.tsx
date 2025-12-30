@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Smartphone } from "lucide-react";
+import { ExternalLink, Github, Smartphone, Sparkles, AlertCircle } from "lucide-react";
 import { Project } from "@/data/projects";
 import { Button } from "@/components/ui/button";
 import { TechBadge } from "@/components/tech-badge";
@@ -30,11 +30,20 @@ export function ProjectCard({ project, layoutId }: ProjectCardProps) {
         <span className="font-medium uppercase tracking-[0.2em]">
           {project.year}
         </span>
-        {project.featured && (
-          <span className="rounded-full bg-primary/15 px-3 py-1 text-[11px] font-semibold text-primary">
-            Featured
-          </span>
-        )}
+        <div className="flex items-center gap-2">
+          {project.beta && (
+            <span className="flex items-center gap-1.5 rounded-full bg-amber-500/15 px-3 py-1 text-[11px] font-semibold text-amber-600 dark:text-amber-400">
+              <AlertCircle className="h-3 w-3" />
+              Beta
+            </span>
+          )}
+          {project.featured && !project.beta && (
+            <span className="flex items-center gap-1.5 rounded-full bg-primary/15 px-3 py-1 text-[11px] font-semibold text-primary">
+              <Sparkles className="h-3 w-3" />
+              Featured
+            </span>
+          )}
+        </div>
       </div>
       <div className="mt-4 space-y-3">
         <h3 className="text-2xl font-semibold text-foreground">
@@ -49,70 +58,37 @@ export function ProjectCard({ project, layoutId }: ProjectCardProps) {
           <TechBadge key={item} label={item} />
         ))}
       </div>
-      <div className="mt-6 grid grid-cols-2 gap-3 pt-4">
-        {project.links?.live && (
-          <Button asChild variant="primary" size="sm" className="rounded-2xl">
-            <Link href={project.links.live} target="_blank" rel="noreferrer">
-              Live <ExternalLink className="h-4 w-4" />
-            </Link>
-          </Button>
-        )}
-        {project.links?.code && (
-          <Button
-            asChild
-            variant="outline"
-            size="sm"
-            className="rounded-2xl text-muted-foreground hover:text-foreground"
-          >
-            <Link href={project.links.code} target="_blank" rel="noreferrer">
-              Code <Github className="h-4 w-4" />
-            </Link>
-          </Button>
-        )}
-        {project.links?.playStore && (
-          <Button asChild variant="outline" size="sm" className="rounded-2xl">
-            <Link href={project.links.playStore} target="_blank" rel="noreferrer">
-              Android <Smartphone className="h-4 w-4" />
-            </Link>
-          </Button>
-        )}
-        {project.links?.mobileCode && (
-          <Button
-            asChild
-            variant="outline"
-            size="sm"
-            className="rounded-2xl text-muted-foreground hover:text-foreground"
-          >
-            <Link
-              href={project.links.mobileCode}
-              target="_blank"
-              rel="noreferrer"
+      <div className="mt-6 flex flex-wrap gap-3 pt-4">
+        {project.links.map((link) => {
+          const Icon = getIconForLabel(link.label);
+          const isPrimary = link.kind === "primary";
+
+          return (
+            <Button
+              key={link.url}
+              asChild
+              variant={isPrimary ? "primary" : "outline"}
+              size="sm"
+              className={cn(
+                "rounded-2xl",
+                !isPrimary && "text-muted-foreground hover:text-foreground"
+              )}
             >
-              Mobile <Github className="h-4 w-4" />
-            </Link>
-          </Button>
-        )}
-        {/* Fallback for legacy data/types if needed, though we updated all data */}
-        {!project.links && project.live && (
-          <Button asChild variant="primary" size="sm" className="rounded-2xl">
-            <Link href={project.live} target="_blank" rel="noreferrer">
-              Live <ExternalLink className="h-4 w-4" />
-            </Link>
-          </Button>
-        )}
-        {!project.links && project.github && (
-          <Button
-            asChild
-            variant="outline"
-            size="sm"
-            className="rounded-2xl text-muted-foreground hover:text-foreground"
-          >
-            <Link href={project.github} target="_blank" rel="noreferrer">
-              Code <Github className="h-4 w-4" />
-            </Link>
-          </Button>
-        )}
+              <Link href={link.url} target={link.url.startsWith("/") ? "_self" : "_blank"} rel="noreferrer">
+                {link.label} <Icon className="h-4 w-4" />
+              </Link>
+            </Button>
+          );
+        })}
       </div>
     </motion.article>
   );
+}
+
+function getIconForLabel(label: string) {
+  const l = label.toLowerCase();
+  if (l.includes("code") || l.includes("github") || l.includes("repo")) return Github;
+  if (l.includes("android") || l.includes("play store") || l.includes("app")) return Smartphone;
+  if (l.includes("beta")) return AlertCircle;
+  return ExternalLink;
 }

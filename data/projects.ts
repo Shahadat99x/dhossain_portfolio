@@ -1,19 +1,18 @@
+export type ProjectLink = {
+  label: string;
+  url: string;
+  kind?: "primary" | "secondary" | "tertiary";
+};
+
 export type Project = {
   title: string;
   description: string;
   year: number;
   tech: string[];
   slug: string;
-  // Deprecated: use links object instead
-  github?: string;
-  live?: string;
-  links: {
-    live?: string;
-    code?: string;
-    playStore?: string;
-    mobileCode?: string;
-  };
+  links: ProjectLink[];
   featured?: boolean;
+  beta?: boolean;
 };
 
 export const projects: Project[] = [
@@ -24,16 +23,46 @@ export const projects: Project[] = [
     year: 2024,
     tech: ["Next.js", "TypeScript", "Supabase", "Flutter", "Dart", "Vercel"],
     slug: "lexnova-legal-platform",
-    // Keeping backward compatibility if needed, but type says optional
-    github: "https://github.com/Shahadat99x/lawfirm-pwa-platform",
-    live: "https://lexnovaeu.vercel.app",
-    links: {
-      live: "https://lexnovaeu.vercel.app",
-      code: "https://github.com/Shahadat99x/lawfirm-pwa-platform",
-      playStore: "https://play.google.com/store/apps/details?id=com.lexnova.app",
-      mobileCode: "https://github.com/Shahadat99x/lawfirm_mobile_app",
-    },
+    links: [
+      {
+        label: "Live",
+        url: "https://lexnovaeu.vercel.app",
+        kind: "primary",
+      },
+      {
+        label: "Code",
+        url: "https://github.com/Shahadat99x/lawfirm-pwa-platform",
+        kind: "secondary",
+      },
+    ],
     featured: true,
+  },
+  {
+    title: "LexNova – Android App (Beta)",
+    description:
+      "A native Android application built with Flutter and Dart for the LexNova Legal platform. It shares the same Supabase backend as the web system and is currently in closed testing (beta) prior to public release.",
+    year: 2024,
+    tech: ["Flutter", "Dart", "Supabase"],
+    slug: "lexnova-android-beta",
+    links: [
+      {
+        label: "Request Beta Access",
+        url: "/contact?subject=LexNova%20Android%20Beta%20Access",
+        kind: "primary",
+      },
+      {
+        label: "Code",
+        url: "https://github.com/Shahadat99x/lawfirm_mobile_app",
+        kind: "secondary",
+      },
+      {
+        label: "Play Store (Beta)",
+        url: "https://play.google.com/store/apps/details?id=com.lexnova.app",
+        kind: "secondary",
+      },
+    ],
+    featured: true,
+    beta: true,
   },
   {
     title: "EstateNova – Real Estate Platform",
@@ -42,12 +71,18 @@ export const projects: Project[] = [
     year: 2024,
     tech: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS", "Docker", "Vercel"],
     slug: "estatenova-real-estate",
-    github: "https://github.com/Shahadat99x/real-estate-platform",
-    live: "https://estatenova.vercel.app",
-    links: {
-      live: "https://estatenova.vercel.app",
-      code: "https://github.com/Shahadat99x/real-estate-platform",
-    },
+    links: [
+      {
+        label: "Live",
+        url: "https://estatenova.vercel.app",
+        kind: "primary",
+      },
+      {
+        label: "Code",
+        url: "https://github.com/Shahadat99x/real-estate-platform",
+        kind: "secondary",
+      },
+    ],
     featured: true,
   },
 ];
