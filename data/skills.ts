@@ -11,27 +11,29 @@ export type SkillGroup = {
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: "Languages & Runtime",
+    title: "Core Stack",
     items: [
-      { name: "TypeScript", level: 92, emphasis: "primary" },
-      { name: "Python", level: 88, emphasis: "primary" },
-      { name: "Node.js", level: 86 },
+      { name: "Next.js", level: 95, emphasis: "primary" },
+      { name: "TypeScript", level: 90, emphasis: "primary" },
+      { name: "Supabase", level: 88, emphasis: "primary" },
+      { name: "Tailwind CSS", level: 92 },
     ],
   },
   {
-    title: "Frameworks",
+    title: "Mobile & Hybrid",
     items: [
-      { name: "Next.js", level: 90, emphasis: "primary" },
-      { name: "Tailwind CSS", level: 85 },
-      { name: "Vercel", level: 82 },
+      { name: "Flutter", level: 85, emphasis: "primary" },
+      { name: "Dart", level: 85 },
+      { name: "PWA", level: 80 },
     ],
   },
   {
-    title: "AI & Data",
+    title: "DevOps & Infrastructure",
     items: [
-      { name: "TensorFlow", level: 80 },
-      { name: "MongoDB", level: 78 },
-      { name: "Docker", level: 84 },
+      { name: "Docker", level: 75 },
+      { name: "Vercel", level: 90 },
+      { name: "Git", level: 88 },
+      { name: "Backend Integration", level: 85 },
     ],
   },
 ];

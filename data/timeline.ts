@@ -9,36 +9,36 @@ export type TimelineItem = {
 
 export const timeline: TimelineItem[] = [
   {
-    title: "Senior AI Engineer",
+    title: "Full-Stack Engineer",
     organization: "Nordic Applied Intelligence Lab",
     location: "Vilnius, Lithuania",
     date: "2024 - Present",
     description:
-      "Leading a cross-functional team shipping applied LLM copilots and decision support dashboards for manufacturing clients.",
+      "Developing production-ready web platforms and internal tools using Next.js and Supabase. Implementing secure authentication, real-time data features, and responsive administrative dashboards.",
     highlighted: true,
   },
   {
-    title: "AI Product Explorer",
+    title: "Product Engineer",
     organization: "Independent",
     location: "Remote",
     date: "2022 - 2024",
     description:
-      "Prototyped data-centric AI products, consulted on ML platform foundations, and launched community tooling for prompt engineering.",
+      "Designed and built end-to-end web applications for clients, focusing on performance, SEO optimisation, and clean user experience. Managed deployment pipelines and cloud infrastructure.",
   },
   {
-    title: "Data Science Lead",
+    title: "Software Developer",
     organization: "Baltic Fintech Collective",
     location: "Riga, Latvia",
     date: "2019 - 2022",
     description:
-      "Scaled forecasting models, introduced MLOps best practices, and mentored analysts transitioning into machine learning roles.",
+      "Contributed to backend API development and frontend integration. Wrote clean, maintainable code and collaborated with cross-functional teams to deliver feature updates.",
   },
   {
-    title: "AI Research Graduate",
+    title: "Computer Science Student",
     organization: "Vilnius University",
     location: "Vilnius, Lithuania",
     date: "2016 - 2019",
     description:
-      "Focused on probabilistic models for risk assessment and published work on interpretable neural architectures.",
+      "Focused on software engineering fundamentals, algorithms, and web technologies. Completed capstone project on distributed systems architecture.",
   },
 ];
