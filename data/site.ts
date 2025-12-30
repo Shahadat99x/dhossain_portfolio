@@ -4,7 +4,14 @@ export type NavItem = {
 };
 
 export type SocialLink = {
-  platform: "GitHub" | "LinkedIn" | "X" | "YouTube";
+  platform:
+  | "GitHub"
+  | "LinkedIn"
+  | "X"
+  | "YouTube"
+  | "Instagram"
+  | "Reddit"
+  | "Facebook";
   href: string;
 };
 
@@ -33,7 +40,7 @@ export const socialLinks: SocialLink[] = [
   { platform: "LinkedIn", href: "https://linkedin.com/in/shahadat-ai" },
   { platform: "X", href: "https://x.com/shahadat_ai" },
   { platform: "Instagram", href: "https://www.instagram.com/shahadathossainverified/" },
-  { platform: "Reddit", href: "https://reddit.com/user/shahadat_ai" },
+  { platform: "Reddit", href: "https://reddit.com/user/shahadat99x" },
   { platform: "Facebook", href: "https://facebook.com/shahadathossainverified" },
   { platform: "YouTube", href: "https://youtube.com/@TraveloguebyShahadat" },
 ];

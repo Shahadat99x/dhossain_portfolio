@@ -1,7 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { Github, Linkedin, Twitter, Youtube } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Twitter,
+  Youtube,
+  Instagram,
+  Facebook,
+  MessageSquare,
+} from "lucide-react";
 import { socialLinks, siteConfig } from "@/data/site";
 
 const iconMap = {
@@ -9,6 +17,9 @@ const iconMap = {
   LinkedIn: Linkedin,
   X: Twitter,
   YouTube: Youtube,
+  Instagram: Instagram,
+  Facebook: Facebook,
+  Reddit: MessageSquare, // Lucide doesn't have a Reddit icon, using MessageSquare as fallback
 } as const;
 
 export function Footer() {
