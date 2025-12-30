@@ -34,7 +34,7 @@ export function AboutContent() {
       <SectionHeader
         eyebrow="About"
         title="Curious, pragmatic, and tuned for impact"
-        description="I enjoy bridging the messy middle between data science research and polished product experiences. Years spent driving ML initiatives in fintech, manufacturing, and product studios taught me how to blend research, engineering, and storytelling."
+        description="I build production-ready web and mobile platforms with a strong focus on real-world constraints, scalability, and clean user experience. My work spans full-stack web applications, admin dashboards, and native mobile apps backed by shared cloud infrastructure."
       />
 
       <div className="grid gap-6 sm:grid-cols-3">

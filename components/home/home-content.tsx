@@ -37,9 +37,7 @@ export function HomeContent() {
               {siteConfig.tagline}
             </h1>
             <p className="max-w-2xl text-base text-muted-foreground sm:text-lg">
-              I partner with founders and engineering teams to ship human-centred AI
-              experiences that are grounded in data rigor, accessible interfaces, and
-              measurable business impact.
+              Applied AI & Full-Stack Developer building production-ready platforms.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
